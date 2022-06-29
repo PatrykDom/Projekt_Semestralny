@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projekt_Semestralny.DataBaseContext;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
+using Projekt_Semestralny.Model;
 
 namespace DataGrid_to_SQL
 {
@@ -23,6 +26,19 @@ namespace DataGrid_to_SQL
         public MainWindow()
         {
             InitializeComponent();
+            var DataContext = new Context();
+
+            var manager = new DbManager(DataContext);
+
+            var l = new Lekarze()
+            {
+                Imie = "Karol",
+                Nazwisko = "Niemiec",
+                Pesel = "1241412412"
+            
+            };
+            manager.Add(l);
+            //manager.SaveChanges();
         }
 
          
