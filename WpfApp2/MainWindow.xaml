@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataGrid_to_SQL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Klinika" Height="450" Width="800">
     <Window.Resources>
         <Style TargetType="DataGridColumnHeader">
             <Setter Property="Background" Value="#ff2c3e50"/>
@@ -29,6 +29,47 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <DataGrid Name="EmployeesList"  Margin="10,50,10,10"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="1" Padding="15,15,15,15">
+            Dodaj lekarza
+        </TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="2" Padding="15,15,15,15">
+            Dodaj opiekuna
+        </TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="3" Padding="15,15,15,15">
+            Dodaj gatunek
+        </TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="4" Padding="15,15,15,15">
+            Dodaj pacjenta
+        </TextBlock>
+        <Button Name="Lekarz" Grid.Column="2" Grid.Row="1"  Margin="10,10,531,10" Padding="5" Grid.ColumnSpan="2" Click="addDoctorButton">
+            +
+        </Button>
+        <Button Name="Opiekun" Grid.Column="2" Grid.Row="2" Margin="10,10,531,10" Padding="5" Grid.ColumnSpan="2" Click="addKeeperButton">
+            +
+        </Button>
+        <Button Name="Gatunek" Grid.Column="2" Grid.Row="3" Margin="10,10,531,10" Padding="5" Grid.ColumnSpan="2" Click="addTypeButton">
+            +
+        </Button>
+        <Button Name="Pacjent" Grid.Column="2" Grid.Row="4" Margin="10,10,531,10" Padding="5" Grid.ColumnSpan="2" Click="addPatientButton">
+            +
+        </Button>
     </Grid>
+
 </Window>

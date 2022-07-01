@@ -188,6 +188,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Gatunek.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lekarz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -198,19 +206,41 @@
     </Compile>
     <Compile Include="DataBaseContext\Context.cs" />
     <Compile Include="DataBaseContext\DbManager.cs" />
+    <Compile Include="Gatunek.xaml.cs">
+      <DependentUpon>Gatunek.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lekarz.xaml.cs">
+      <DependentUpon>Lekarz.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Opiekun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pacjent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20220629210659_InitialCreate.cs" />
-    <Compile Include="Migrations\20220629210659_InitialCreate.designer.cs">
-      <DependentUpon>20220629210659_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\20220701190212_InitialCreate.cs" />
+    <Compile Include="Migrations\20220701190212_InitialCreate.designer.cs">
+      <DependentUpon>20220701190212_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ContextModelSnapshot.cs" />
     <Compile Include="Model\Gatunki.cs" />
     <Compile Include="Model\Lekarze.cs" />
+    <Compile Include="Model\Opiekunowie.cs" />
+    <Compile Include="Model\Pacjenci.cs" />
+    <Compile Include="Opiekun.xaml.cs">
+      <DependentUpon>Opiekun.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pacjent.xaml.cs">
+      <DependentUpon>Pacjent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Projekt_Semestralny.Model
 {
-    public class Gatunki
+    public class Pacjenci
     {
         public int Id { get; set; }
-        public string NazwaGatunku { get; set; }
+        public virtual Opiekunowie Opiekun { get; set; }
+        public virtual Lekarze Lekarz { get; set; }
+        public virtual Gatunki Gatunek { get; set; }
     }
 }

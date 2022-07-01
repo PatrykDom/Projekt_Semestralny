@@ -17,6 +17,8 @@ namespace Projekt_Semestralny.DataBaseContext
 
         public DbSet<Lekarze> Lekarze { get; set; }
         public DbSet<Gatunki> Gatunki { get; set; }
+        public DbSet<Opiekunowie> Opiekunowie { get; set; }
+        public DbSet<Pacjenci> Pacjenci { get; set; }
 
     }
 }

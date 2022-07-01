@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projekt_Semestralny.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,9 @@ namespace Projekt_Semestralny.DataBaseContext
         {
             _dbContext.Add(item);
             _dbContext.SaveChanges();
+
         }
+
         public void AddRange(IEnumerable<object> list)
         {
             _dbContext.AddRange(list);
@@ -37,6 +40,22 @@ namespace Projekt_Semestralny.DataBaseContext
         {
             _dbContext.Remove(item);
             _dbContext.SaveChanges();
+        }
+
+        public List<Lekarze> GetDoctors()
+        {
+            var lekarze =  _dbContext.Lekarze.ToList();
+            return lekarze;
+        }
+        public List<Opiekunowie> GetKeepers()
+        {
+            var opiekunowie = _dbContext.Opiekunowie.ToList();
+            return opiekunowie;
+        }
+        public List<Gatunki> GetTypes()
+        {
+            var gatunki = _dbContext.Gatunki.ToList();
+            return gatunki;
         }
 
     }
