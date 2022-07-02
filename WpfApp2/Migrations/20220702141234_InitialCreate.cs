@@ -52,8 +52,7 @@ namespace Projekt_Semestralny.Migrations
                 name: "Pacjenci",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(nullable: false).Annotation("SqlServer:Identity", "1, 1"),
                     OpiekunId = table.Column<int>(nullable: true),
                     LekarzId = table.Column<int>(nullable: true),
                     GatunekId = table.Column<int>(nullable: true)

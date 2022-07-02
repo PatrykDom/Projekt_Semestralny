@@ -21,22 +21,23 @@ namespace Projekt_Semestralny
     /// </summary>
     public partial class Pacjent : Window
     {
+        private DbManager DbManager { get; set; }
         private List<Lekarze> lekarze = new List<Lekarze>();
         private List<Opiekunowie> opiekunowie = new List<Opiekunowie>();
         private List<Gatunki> gatunki = new List<Gatunki>();
         public ObservableCollection<string> CmbContent1  = new ObservableCollection<string>();
         public ObservableCollection<string> CmbContent2 = new ObservableCollection<string>();
         public ObservableCollection<string> CmbContent3 = new ObservableCollection<string>();
-        public Pacjent()
+        public Pacjent(DbManager db)
         {
             InitializeComponent();
-            var DataContext = new Context();
+            //var DataContext = new Context();
 
-            var manager = new DbManager(DataContext);
-
-            lekarze = manager.GetDoctors();
-            opiekunowie = manager.GetKeepers();
-            gatunki = manager.GetTypes();
+            //var manager = new DbManager(DataContext);
+            DbManager = db;
+         lekarze = DbManager.GetDoctors();
+            opiekunowie = DbManager.GetKeepers();
+            gatunki = DbManager.GetTypes();
 
            
 
@@ -65,28 +66,29 @@ namespace Projekt_Semestralny
         private void addPatient(object sender, RoutedEventArgs e)
         {
 
-            var DataContext = new Context();
+            //var DataContext = new Context();
 
-            var manager = new DbManager(DataContext);
+            //var manager = new DbManager(DataContext);
             var selectedDoctor = ComboBox1.SelectedItem;
             var selectedKeeper = ComboBox2.SelectedItem;
             var selectedType = ComboBox3.SelectedItem;
-            var d = lekarze.Where((x) => x.Nazwisko == selectedDoctor.ToString()).First();
-            var o = opiekunowie.Where((x) => x.Imie == selectedKeeper.ToString()).First();
-            var g = gatunki.Where((x) => x.NazwaGatunku == selectedType.ToString()).First();
+            var d = DbManager.GetDoctors().ToList().Where((x) => x.Nazwisko == selectedDoctor.ToString()).First(); //lekarze.Where((x) => x.Nazwisko == selectedDoctor.ToString()).First();
+            var o = DbManager.GetKeepers().ToList().Where((x) => x.Imie == selectedKeeper.ToString()).First();
+            var g = DbManager.GetTypes().ToList().Where((x) => x.NazwaGatunku == selectedType.ToString()).First();
 
            
 
             var s = new Pacjenci()
-            {
+            {   
+                
                 Opiekun = o,
                 Lekarz = d,
                 Gatunek = g
             };
-            manager.Add(s);
+            DbManager.Add(s);
 
             this.Close();
-            MessageBox.Show("Dodano opiekuna");
+            MessageBox.Show("Dodano pacjenta");
         }
     }
 }

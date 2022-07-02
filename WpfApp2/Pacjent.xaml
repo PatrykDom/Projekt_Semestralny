@@ -44,7 +44,7 @@
 
         </ComboBox>
 
-        <Button Name="addPatientButton" Grid.Column="1" Grid.Row="4" Margin="10,10,134,199" Padding="5"  Grid.RowSpan="2" Grid.ColumnSpan="2" Content="Dodaj pacjenta" Click="addPatient">
+        <Button Name="addPatientButton" Grid.Column="1" Grid.Row="4" Margin="10,10,134,190" Padding="5"  Grid.RowSpan="2" Grid.ColumnSpan="2" Content="Dodaj pacjenta" Click="addPatient">
 
         </Button>
     </Grid>

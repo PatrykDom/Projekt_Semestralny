@@ -22,22 +22,23 @@ namespace Projekt_Semestralny
     /// </summary>
     public partial class Gatunek : Window
     {
-        public Gatunek()
+        private DbManager DbManager{get; set;}        
+        
+        public Gatunek(DbManager db)
         {
             InitializeComponent();
+            DbManager = db;
         }
 
         private void addType(object sender, RoutedEventArgs e)
         {
-            var DataContext = new Context();
-
-            var manager = new DbManager(DataContext);
+            
 
             var g = new Gatunki()
             {
                 NazwaGatunku = nazwaGatunek.Text
             };
-            manager.Add(g);
+            DbManager.Add(g);
 
             this.Close();
             MessageBox.Show("Dodano gatunek");

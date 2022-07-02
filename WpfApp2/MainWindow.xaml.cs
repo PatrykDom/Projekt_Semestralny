@@ -24,49 +24,62 @@ namespace DataGrid_to_SQL
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DbManager DbManager { get; set; }
+        private List<Lekarze> Lekarze {  
+            
+            get 
+            {
+                return DbManager.GetDoctors();
+            } 
+        }
+        private List<Opiekunowie> Opiekunowie  {
 
-        private List<Lekarze> lekarze = new List<Lekarze>();
-        private List<Opiekunowie> opiekunowie = new List<Opiekunowie>();
-        private List<Gatunki> gatunki = new List<Gatunki>();
-        public MainWindow()
+            get
+            {
+                return DbManager.GetKeepers();
+            }
+        }
+        private List<Gatunki> Gatunki  {
+
+            get
+            {
+                return DbManager.GetTypes();
+            }
+        }
+        
+        public MainWindow(DbManager db)
         {
             InitializeComponent();
-            getData();
-
+            
+            DbManager = db;
         }
 
-        private void getData()
-        {
-            var DataContext = new Context();
-
-            var manager = new DbManager(DataContext);
-            lekarze = manager.GetDoctors();
-            opiekunowie = manager.GetKeepers();
-            gatunki = manager.GetTypes();
-        }
 
         private void addDoctorButton(object sender, RoutedEventArgs e)
         {
-            Lekarz lekarz = new Lekarz();
+            Lekarz lekarz = new Lekarz(DbManager);
 
             lekarz.Show();
         }
         private void addKeeperButton(object sender, RoutedEventArgs e)
         {
-            Opiekun opiekun = new Opiekun();
+            Opiekun opiekun = new Opiekun(DbManager);
 
             opiekun.Show();
         }
         private void addTypeButton(object sender, RoutedEventArgs e)
         {
-            Gatunek gatunek = new Gatunek();
+            Gatunek gatunek = new Gatunek(DbManager);
 
             gatunek.Show();
         }
         private void addPatientButton(object sender, RoutedEventArgs e)
         {
-            getData();
-            if(lekarze.Count == 0)
+            //lekarze = DbManager.GetDoctors();
+            opiekunowie = DbManager.GetKeepers();
+            gatunki = DbManager.GetTypes();
+            //getData();
+            if (lekarze.Count == 0)
             {
                 MessageBox.Show("Najpierw dodaj lekarza");
             }
@@ -80,7 +93,7 @@ namespace DataGrid_to_SQL
             }
             if(lekarze.Count != 0 && opiekunowie.Count != 0 && gatunki.Count != 0)
             {
-                Pacjent patient = new Pacjent();
+                Pacjent patient = new Pacjent(DbManager);
                 patient.Show();
             }
             

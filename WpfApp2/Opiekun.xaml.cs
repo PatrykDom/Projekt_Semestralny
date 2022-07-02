@@ -21,23 +21,25 @@ namespace Projekt_Semestralny
     /// </summary>
     public partial class Opiekun : Window
     {
-        public Opiekun()
+        private DbManager DbManager { get; set; }
+        public Opiekun(DbManager db)
         {
             InitializeComponent();
+            DbManager = db;
         }
 
         private void addKeeper(object sender, RoutedEventArgs e)
         {
-            var DataContext = new Context();
+            //var DataContext = new Context();
 
-            var manager = new DbManager(DataContext);
+            //var manager = new DbManager(DataContext);
 
             var o = new Opiekunowie()
             {
                 Imie = imieOpiekun.Text,
                 Wiek = int.Parse(wiekOpiekun.Text)
             };
-            manager.Add(o);
+            DbManager.Add(o);
 
             this.Close();
             MessageBox.Show("Dodano opiekuna");

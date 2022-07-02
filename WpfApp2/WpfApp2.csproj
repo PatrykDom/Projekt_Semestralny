@@ -226,9 +226,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20220701190212_InitialCreate.cs" />
-    <Compile Include="Migrations\20220701190212_InitialCreate.designer.cs">
-      <DependentUpon>20220701190212_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\20220702141234_InitialCreate.cs" />
+    <Compile Include="Migrations\20220702141234_InitialCreate.designer.cs">
+      <DependentUpon>20220702141234_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ContextModelSnapshot.cs" />
     <Compile Include="Model\Gatunki.cs" />

@@ -22,16 +22,18 @@ namespace Projekt_Semestralny
     /// </summary>
     public partial class Lekarz : Window
     {
-        public Lekarz()
+        private DbManager DbManager { get; set; }
+        public Lekarz(DbManager db)
         {
             InitializeComponent();
+            DbManager = db;
         }
 
         private void addDoctor(object sender, RoutedEventArgs e)
         {
-            var DataContext = new Context();
+            //var DataContext = new Context();
 
-            var manager = new DbManager(DataContext);
+            //var manager = new DbManager(DataContext);
 
             var l = new Lekarze()
             {
@@ -39,10 +41,10 @@ namespace Projekt_Semestralny
                 Nazwisko = nazwiskoLekarz.Text,
                 Pesel = peselLekarz.Text
             };
-            manager.Add(l);
+            DbManager.Add(l);
             this.Close();
             MessageBox.Show("Dodano lekarza");
-            MainWindow mainWindow = new MainWindow();
+            //MainWindow mainWindow = new MainWindow(DbManager);
             //manager.SaveChanges();
         }
     }

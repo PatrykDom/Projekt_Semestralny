@@ -10,7 +10,7 @@ using Projekt_Semestralny.DataBaseContext;
 namespace Projekt_Semestralny.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220701190212_InitialCreate")]
+    [Migration("20220702141234_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -78,9 +78,7 @@ namespace Projekt_Semestralny.Migrations
             modelBuilder.Entity("Projekt_Semestralny.Model.Pacjenci", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<int?>("GatunekId")
                         .HasColumnType("int");
