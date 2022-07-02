@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace Projekt_Semestralny
 {
-    /// <summary>
-    /// Interaction logic for Gatunek.xaml
-    /// </summary>
     public partial class Gatunek : Window
     {
         private DbManager DbManager{get; set;}        
@@ -42,7 +39,6 @@ namespace Projekt_Semestralny
 
             this.Close();
             MessageBox.Show("Dodano gatunek");
-            //manager.SaveChanges();
         }
 
         

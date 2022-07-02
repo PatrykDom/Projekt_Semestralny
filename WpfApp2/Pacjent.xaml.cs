@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 namespace Projekt_Semestralny
 {
-    /// <summary>
-    /// Interaction logic for Pacjent.xaml
-    /// </summary>
     public partial class Pacjent : Window
     {
         private DbManager DbManager { get; set; }
@@ -31,9 +28,7 @@ namespace Projekt_Semestralny
         public Pacjent(DbManager db)
         {
             InitializeComponent();
-            //var DataContext = new Context();
 
-            //var manager = new DbManager(DataContext);
             DbManager = db;
          lekarze = DbManager.GetDoctors();
             opiekunowie = DbManager.GetKeepers();
@@ -66,13 +61,10 @@ namespace Projekt_Semestralny
         private void addPatient(object sender, RoutedEventArgs e)
         {
 
-            //var DataContext = new Context();
-
-            //var manager = new DbManager(DataContext);
             var selectedDoctor = ComboBox1.SelectedItem;
             var selectedKeeper = ComboBox2.SelectedItem;
             var selectedType = ComboBox3.SelectedItem;
-            var d = DbManager.GetDoctors().ToList().Where((x) => x.Nazwisko == selectedDoctor.ToString()).First(); //lekarze.Where((x) => x.Nazwisko == selectedDoctor.ToString()).First();
+            var d = DbManager.GetDoctors().ToList().Where((x) => x.Nazwisko == selectedDoctor.ToString()).First();
             var o = DbManager.GetKeepers().ToList().Where((x) => x.Imie == selectedKeeper.ToString()).First();
             var g = DbManager.GetTypes().ToList().Where((x) => x.NazwaGatunku == selectedType.ToString()).First();
 

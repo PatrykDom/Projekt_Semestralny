@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Projekt_Semestralny
 {
-    /// <summary>
-    /// Interaction logic for Opiekun.xaml
-    /// </summary>
     public partial class Opiekun : Window
     {
         private DbManager DbManager { get; set; }
@@ -30,9 +27,6 @@ namespace Projekt_Semestralny
 
         private void AddKeeper(object sender, RoutedEventArgs e)
         {
-            //var DataContext = new Context();
-
-            //var manager = new DbManager(DataContext);
 
             var o = new Opiekunowie()
             {
@@ -43,8 +37,7 @@ namespace Projekt_Semestralny
 
             this.Close();
             MessageBox.Show("Dodano opiekuna");
-
-            //manager.SaveChanges();
+      
         }
     }
 }

@@ -19,9 +19,6 @@ using Projekt_Semestralny;
 
 namespace DataGrid_to_SQL
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private DbManager DbManager { get; set; }

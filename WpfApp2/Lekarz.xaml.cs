@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace Projekt_Semestralny
 {
-    /// <summary>
-    /// Interaction logic for Lekarz.xaml
-    /// </summary>
     public partial class Lekarz : Window
     {
         private DbManager DbManager { get; set; }
@@ -31,9 +28,6 @@ namespace Projekt_Semestralny
 
         private void AddDoctor(object sender, RoutedEventArgs e)
         {
-            //var DataContext = new Context();
-
-            //var manager = new DbManager(DataContext);
 
             var l = new Lekarze()
             {
@@ -44,8 +38,7 @@ namespace Projekt_Semestralny
             DbManager.Add(l);
             this.Close();
             MessageBox.Show("Dodano lekarza");
-            //MainWindow mainWindow = new MainWindow(DbManager);
-            //manager.SaveChanges();
+
         }
     }
 }

@@ -10,11 +10,6 @@ namespace Projekt_Semestralny.DataBaseContext
 {
     public class Context : DbContext
     {
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=AppDatabase;Trusted_Connection=True;");
-        //}
-
         public Context(DbContextOptions<Context> options): base(options)
         {
             Database.EnsureCreated();

@@ -20,8 +20,7 @@ namespace Projekt_Semestralny.DataBaseContext
         public void Add(object item)
         {
             _dbContext.Add(item);
-            _dbContext.SaveChanges();
-           // _dbContext.Entry(item).Reload();
+            _dbContext.SaveChanges();   
         }
 
         public void AddRange(IEnumerable<object> list)
