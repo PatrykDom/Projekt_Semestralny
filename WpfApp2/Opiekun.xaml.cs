@@ -28,7 +28,7 @@ namespace Projekt_Semestralny
             DbManager = db;
         }
 
-        private void addKeeper(object sender, RoutedEventArgs e)
+        private void AddKeeper(object sender, RoutedEventArgs e)
         {
             //var DataContext = new Context();
 

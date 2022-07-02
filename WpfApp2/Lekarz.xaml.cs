@@ -29,7 +29,7 @@ namespace Projekt_Semestralny
             DbManager = db;
         }
 
-        private void addDoctor(object sender, RoutedEventArgs e)
+        private void AddDoctor(object sender, RoutedEventArgs e)
         {
             //var DataContext = new Context();
 

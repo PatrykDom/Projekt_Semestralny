@@ -39,7 +39,7 @@
 
         </TextBox>
 
-        <Button Name="addKeeperButton" Grid.Column="1" Grid.Row="4" Margin="10,10,134,228" Padding="5" Click="addKeeper" Grid.RowSpan="2" Grid.ColumnSpan="2" Content="Dodaj opiekuna" >
+        <Button Name="addKeeperButton" Grid.Column="1" Grid.Row="4" Margin="10,10,134,228" Padding="5" Click="AddKeeper" Grid.RowSpan="2" Grid.ColumnSpan="2" Content="Dodaj opiekuna" >
 
         </Button>
     </Grid>

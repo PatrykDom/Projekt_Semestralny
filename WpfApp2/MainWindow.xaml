@@ -33,6 +33,7 @@
             <ColumnDefinition Width="20"></ColumnDefinition>
             <ColumnDefinition Width="auto"></ColumnDefinition>
             <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="20"></ColumnDefinition>
         </Grid.ColumnDefinitions>
@@ -58,18 +59,28 @@
         <TextBlock Grid.Column="1" Grid.Row="4" Padding="15,15,15,15">
             Dodaj pacjenta
         </TextBlock>
-        <Button Name="Lekarz" Grid.Column="2" Grid.Row="1"  Margin="10,10,531,10" Padding="5" Grid.ColumnSpan="2" Click="addDoctorButton">
+        <Button Name="Lekarz" Grid.Column="2" Grid.Row="1"  Margin="10,10,531,10" Padding="5" Grid.ColumnSpan="2" Click="AddDoctorButton">
             +
         </Button>
-        <Button Name="Opiekun" Grid.Column="2" Grid.Row="2" Margin="10,10,531,10" Padding="5" Grid.ColumnSpan="2" Click="addKeeperButton">
+        <Button Name="Opiekun" Grid.Column="2" Grid.Row="2" Margin="10,10,531,10" Padding="5" Grid.ColumnSpan="2" Click="AddKeeperButton">
             +
         </Button>
-        <Button Name="Gatunek" Grid.Column="2" Grid.Row="3" Margin="10,10,531,10" Padding="5" Grid.ColumnSpan="2" Click="addTypeButton">
+        <Button Name="Gatunek" Grid.Column="2" Grid.Row="3" Margin="10,10,531,10" Padding="5" Grid.ColumnSpan="2" Click="AddTypeButton">
             +
         </Button>
-        <Button Name="Pacjent" Grid.Column="2" Grid.Row="4" Margin="10,10,531,10" Padding="5" Grid.ColumnSpan="2" Click="addPatientButton">
+        <Button Name="Pacjent" Grid.Column="2" Grid.Row="4" Margin="10,10,531,10" Padding="5" Grid.ColumnSpan="2" Click="AddPatientButton">
             +
         </Button>
+
+
+        <ListView Name ="ListPatients" Grid.Column="3" HorizontalAlignment="Left" Height="244" Margin="34,10,0,0" Grid.Row="1" Grid.RowSpan="5" VerticalAlignment="Top" Width="199" RenderTransformOrigin="0.774,0.484">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.ColumnSpan="2" Content="Wyświetl pacjentów" Grid.Column="2" HorizontalAlignment="Left" Margin="157,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="144" Height="43" RenderTransformOrigin="-0.107,0.651" Grid.RowSpan="2" Click="ShowPatients"/>
     </Grid>
 
 </Window>

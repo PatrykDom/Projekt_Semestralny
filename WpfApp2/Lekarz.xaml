@@ -43,7 +43,7 @@
         <TextBox Name="peselLekarz" Grid.Column="2" Grid.Row="3" Margin="10" Padding="5">
 
         </TextBox>
-        <Button Name="addDoctorButton" Grid.Column="1" Grid.Row="4" Margin="10,10,134,191" Padding="5" Click="addDoctor" Grid.RowSpan="2" Grid.ColumnSpan="2" Content="Dodaj lekarza"  >
+        <Button Name="addDoctorButton" Grid.Column="1" Grid.Row="4" Margin="10,10,134,191" Padding="5" Click="AddDoctor" Grid.RowSpan="2" Grid.ColumnSpan="2" Content="Dodaj lekarza"  >
 
         </Button>
     </Grid>

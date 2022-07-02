@@ -58,5 +58,10 @@ namespace Projekt_Semestralny.DataBaseContext
             return gatunki;
         }
 
+        public List<Pacjenci> GetPatients()
+        {
+            var pacjenci = _dbContext.Pacjenci.ToList();
+            return pacjenci;
+        }
     }
 }
